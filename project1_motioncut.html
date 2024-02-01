@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Pricing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 2em;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pricing-card {
+            background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 2em;
+            text-align: center;
+            width: 30%;
+            margin: 1em;
+            transition: transform 0.3s ease-in-out, background 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to bottom, #f2f2f2 0%, #e6e6e6 100%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card h2 {
+            color: #333;
+        }
+
+        .pricing-card p {
+            color: #666;
+            margin-bottom: 1em;
+        }
+
+        .pricing-card button {
+            background-color: #007bff;
+            color: white;
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .pricing-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .purchase-form {
+            display: none;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 2em;
+            text-align: center;
+            width: 50%;
+            margin: 2em auto;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .purchase-form input {
+            width: 80%;
+            padding: 0.5em;
+            margin: 1em 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .purchase-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .purchase-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to our Bookstore</h1>
+    </header>
+
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h2>Starter Pack</h2>
+            <p>Get access to a curated collection of best-selling books every month. Discover new authors and genres.</p>
+            <p>Only $9.99/month</p>
+            <button onclick="showPurchaseForm('Starter Pack')">Subscribe Now</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Book Lover's Choice</h2>
+            <p>Unlock an extensive library with unlimited access to a diverse range of books. Perfect for avid readers.</p>
+            <p>Just $19.99/month</p>
+            <button onclick="showPurchaseForm('Book Lover\'s Choice')">Subscribe Now</button>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Premium Collection</h2>
+            <p>Experience the premium collection of hardcover books delivered to your doorstep every month. Exclusive editions and author-signed copies.</p>
+            <p>Only $29.99/month</p>
+            <button onclick="showPurchaseForm('Premium Collection')">Subscribe Now</button>
+        </div>
+    </div>
+
+    <div class="purchase-form" id="purchaseForm">
+        <h2>Enter your details to complete the subscription</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <button onclick="completePurchase()">Subscribe Now</button>
+    </div>
+
+    <script>
+        function showPurchaseForm(plan) {
+            document.getElementById('purchaseForm').style.display = 'block';
+            alert('You have selected the ' + plan + '. Please enter your details to subscribe.');
+        }
+
+        function completePurchase() {
+            alert('Thank you for subscribing! Enjoy your reading journey.');
+            document.getElementById('purchaseForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
